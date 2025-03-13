@@ -24,7 +24,7 @@ using (HttpClient client = new())
         musicasPreferidasMarcelo.AdicionarMusicaFavorita(musicas[12]);
         musicasPreferidasMarcelo.AdicionarMusicaFavorita(musicas[7]);
         musicasPreferidasMarcelo.AdicionarMusicaFavorita(musicas[5]);
-        musicasPreferidasMarcelo.ExibirMusicasFavoritas();
+        // musicasPreferidasMarcelo.ExibirMusicasFavoritas();
 
         var musicasPreferidasFulano = new MusicasPreferidas("Fulano");
         musicasPreferidasFulano.AdicionarMusicaFavorita(musicas[200]);
@@ -36,6 +36,8 @@ using (HttpClient client = new())
 
         // musicasPreferidasMarcelo.GerarArquivoJSON();
         // musicasPreferidasFulano.GerarArquivoJSON();
+
+        LinqFilter.FiltrarMusicasPorTonalidade(musicas, "C#");
 
     }
     catch (Exception ex)
