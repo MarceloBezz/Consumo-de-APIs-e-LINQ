@@ -1,5 +1,6 @@
 ﻿using System.Text.Json;
 using ScreenSound.Modelos;
+using ScreenSound.Filtros;
 
 using (HttpClient client = new())
 {
@@ -10,7 +11,12 @@ using (HttpClient client = new())
         );
         // Console.WriteLine(resposta);
         var musicas = JsonSerializer.Deserialize<List<Musica>>(resposta)!;
-        musicas[207].ExibirDetalhesMusica();
+        // musicas[207].ExibirDetalhesMusica();
+        // LinqFilter.FiltrarTodosOsGenerosMusicais(musicas);
+        // LinqOrder.ExibirListaDeArtistasOrdenados(musicas);
+        // LinqFilter.FiltrarArtistasPorGeneroMusical(musicas, "pop");
+        // LinqFilter.FiltrarMusicasDeUmArtista(musicas, "Taylor Swift");
+        LinqFilter.FiltrarMusicasPorAno(musicas, "2006");
     }
     catch (Exception ex)
     {

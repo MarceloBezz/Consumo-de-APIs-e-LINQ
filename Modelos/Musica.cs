@@ -16,13 +16,18 @@ class Musica
     [JsonPropertyName("genre")]
     public string? Genero { get; set; }
 
+    [JsonPropertyName("year")]
+    public string? Ano { get; set; }
+
     public void ExibirDetalhesMusica()
     {
         Console.WriteLine($@"
         Artista: {Artista},
         Música: {Nome},
         Duração em segundos: {Duracao / 1000},
-        Gênero musical: {Genero};
-        ");
+        Gênero musical: {Genero}
+        Ano de lançamento: {Ano};
+        "
+        );
     }
 }
